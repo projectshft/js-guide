@@ -745,7 +745,7 @@ And so on...
 
 ## More Exercises:
 
-- Multiply: [https://www.codewars.com/kata/multiply/train/javascript](Multiply: https://www.codewars.com/kata/multiply/train/javascript
+- Multiply: [https://www.codewars.com/kata/multiply/train/javascript](https://www.codewars.com/kata/multiply/train/javascript)
 - Return Negative: [https://www.codewars.com/kata/return-negative/train/](https://www.codewars.com/kata/return-negative/train/)
 javascript
 - Is Greater Than: https://codepen.io/hrprep/pen/wdBKee?editors=1010
