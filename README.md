@@ -319,4 +319,454 @@ var family = ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan'];
 
 Write some code below that to console log `'Jeremiah'`.
 
+<details>
+  <summary>The Answer</summary>
+
+  ```js
+  var family = ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan'];
+
+  console.log(family[4]);
+  ```
+</details>
+
+### Arrays Can Contain Anything
+We can put anything into an array and can even mix what we put inside of them. For example:
+
+```js
+var randomThings = ['hello', 5, function () { return 'hello' }, null, undefined, { color: 'red' }];
+```
+
+We can also add things to arrays dynamically. For example:
+
+```js
+var family = ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan'];
+
+family.push('Baby # 4');
+
+console.log(family); // ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan', 'Baby #4'];
+```
+
+Or we can remove things from an array too using `splice`. Splice is a function that takes two arguments. The first argument is the `index` of the array that we want to start removing things from, and the second argument is the number of items we want to remove.
+
+For example:
+
+```js
+var family = ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan'];
+
+family.splice(2, 3);
+
+console.log(family); // ['Sarah', 'Aaron']
+```
+
+The first argument we provided was `2` so we were referring to `family[2]`, which is `Isaiah`. Therefore, with `splice`, we said "let's remove things from the array, starting `'Isaiah'`".
+
+The second argument we provided was `3`, which again, was the number of items we wanted to remove. Therefore, we were saying ,"let's remove things from the array, starting `'Isaiah'` and removing 3 items".
+
+What would the `family` array look like after the following code?
+
+```js
+var family = ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan'];
+
+family.splice(1, 2);
+```
+
+<details>
+  <summary>The Answer</summary>
+
+  ```js
+  [ 'Aaron', 'Isaiah' ];
+  ```
+</details>
+
+## Loops
+Now let's imagine that we wanted to greet each person in `family`. We would not want to do this:
+
+```js
+var family = ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan'];
+
+console.log('Hello ' + family[0] + '!');
+console.log('Hello ' + family[1] + '!');
+console.log('Hello ' + family[2] + '!');
+console.log('Hello ' + family[3] + '!');
+console.log('Hello ' + family[4] + '!');
+```
+
+We could make it a little better by using a function:
+
+```js
+var family = ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan'];
+
+var greet = function (name) {
+  console.log('Hello ' + name + '!');
+};
+
+greet(family[0]);
+greet(family[1]);
+greet(family[2]);
+greet(family[3]);
+greet(family[4]);
+```
+
+Essentially, we to do this...
+
+```js
+greet(family[0]);
+```
+
+...over and over again, but replace the `0` with the number of the index in the array each time.
+
+For this, we can use a "for loop". Here is how it will look. Make `index.js` look like this and run it:
+
+```js
+for (var i = 0; i < 10; i++) {
+  console.log(i);
+}
+```
+
+As you will see, this will run the console log 10 times, and `i` will change each time. Let's break it down.
+
+Using `for`, we're essentially saying, `for` every loop, do the following.
+
+Inside the `for` parentheses, we're doing three things.
+
+1. We are declaring a variable, `i`. It's convention to call this `i` (short for index) but we can call it whatever we want. In this case we wrote `var i = 0;` to start that `i` will start at `0`.
+
+2. With `i < 10`, we're saying that we want to run the code inside of the brackets (`{}`) _until_ this statement is no longer true. In other words, if `i` gets bigger than 9, stop the loop.
+
+3. Lastly, with `i++`, we're incrementing the `i` variable by 1, each time the loop runs. This is why it start as `0`, then is `1`, then `2`, etc. Writing `i++` is the same as `i +=1` which is the same as `i = i + i`.
+
+Now, let's use `i` for our `family` array. Make `index.js` look like this and run it:
+
+```js
+var family = ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan'];
+
+for (var i = 0; i < 10; i++) {
+  console.log(family[i]);
+}
+```
+
+Notice that we used `i` inside of our bracket notation to console log everyone in the `family` array. For each iteration, `i` pointed to a new index.
+
+However, you will notice that we have a problem as the following was logged to the console:
+
+```js
+Sarah
+Aaron
+Isaiah
+Jeremiah
+Maayan
+undefined
+undefined
+undefined
+undefined
+undefined
+```
+
+That's because `family[5]`, `family[6]`, `family[7]`, `family[8]` and `family[9]` do no exist.
+
+We can change our `for` loop to only loop through the items in the array. We want the loop to stop after `i` becomes bigger than the array is long. We can do this by editing our code to look like this:
+
+```js
+var family = ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan'];
+
+for (var i = 0; i < family.length; i++) {
+  console.log(family[i]);
+}
+```
+
+Notice that we replaced `i < 10` with `i < family.length`. The `length` property of an array give us the length of the array. Make `index.js` look like this and run it:
+
+```js
+var family = ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan'];
+
+for (var i = 0; i < family.length; i++) {
+  console.log(family[i]);
+}
+```
+
+Woo hoo! It works.
+
+Now if we wanted to use our greet function:
+
+```js
+var family = ['Sarah', 'Aaron', 'Isaiah', 'Jeremiah', 'Maayan'];
+
+var greet = function (name) {
+  console.log('Hello ' + name + '!');
+};
+
+for (var i = 0; i < family.length; i++) {
+  greet(family[i]);
+};
+```
+
+We'll get:
+
+```js
+Hello Sarah!
+Hello Aaron!
+Hello Isaiah!
+Hello Jeremiah!
+Hello Maayan!
+```
+
+Woo hoo!
+
+## Creating Objects
+Lastly, we get to the `object` in JavaScript. An object is essentially just a key-value pair. Let's look at an example:
+
+```js
+var car = {
+  color: 'red',
+  wheels: 4
+};
+```
+
+An object is different than array in this way:
+- In an array, the order matters. With an object, the order doesn't matter. `color` could come before or after `wheels`.
+- In an array, we index items by a number (`0`, `1`, `2`, etc). With an object, they're indexed by named properties (`color`, `wheels`).
+
+To access the value of an object property, we use dot notation like this:
+
+```js
+car.color // 'red'
+```
+
+Or bracket notation:
+
+```js
+car['color'] // 'red'
+```
+
+Note that with bracket notation we have to use quotes around the name of the property.
+
+Just like with arrays, the values of any property in an object can be anything, even functions!
+
+```js
+var car = {
+  color: 'red',
+  wheels: 4,
+  drive: function () {
+    console.log('vroom!');
+  }
+};
+```
+
+Technically, `drive` is a "method". A method is a function that belongs to an object. If we wanted to invoke it (and make the car "drive"), we could do this:
+
+```js
+var car = {
+  color: 'red',
+  wheels: 4,
+  drive: function () {
+    console.log('vroom!');
+  }
+};
+
+car.drive(); // 'vroom!'
+```
+
+## Putting it All Together
+Let's walk through solving some basic coding problems with everything we've learned!
+
+## Problem 1 - Adding it All Up
+Using some JavaScript, let's write a a function called `addAllItems` that takes an array as an argument and returns the sum of all the items in the array.
+
+For example: if the input string is `[2, 3, 3]` then your program should return `8`.
+
+Here is how we could do this, step by step:
+
+1. First, let's write the function:
+
+```js
+var addAllItems = function (array) {
+
+};
+```
+
+2. Next, let's test it by invoking it and passing in an array of numbers:
+
+```js
+var numbers = [2, 3, 3];
+
+var addAllItems = function (array) {
+
+};
+
+addAllItems(numbers);
+```
+
+Now we want to write some code that actually does the adding. We'll do this inside the body of `addAllItems`. Here's the strategy:
+
+We'll use a `for` loop to loop through all the numbers in the array and add them up. Then, we'll return that value. It will look like this:
+
+
+```js
+var numbers = [2, 3, 3];
+
+var addAllItems = function (array) {
+  var sum = 0;
+
+  for (var i = 0; i < array.length; i++) {
+    sum = sum + array[i];
+  }
+
+  return sum;
+};
+
+addAllItems(numbers);
+```
+
+Notice that we used something new called `return`. Real simply, `return` does two things:
+
+1. It returns a value from the function
+2. It immediately exists to function so that nothing that comes after it is run.
+
+## Problem 2 - Adding it All Up
+Next let's tackle this. Using some JavaScript, write a function called `numberOfVowels` that takes an array of letters as an argument. The function should return how many letters in the array are vowels.
+
+For example: if the input array is `[i, y, a, e, t]` then your program should return the number `3`. Let's solve it now:
+
+First, we'll write the function and create a test array, and invoke it with that test array:
+
+```js
+var letters = ['a', 'b', 'c', 'e', 'i'];
+
+function numberOfVowels(array) {
+
+  return number;      
+};
+
+numberOfVowels(letters);
+```
+
+Next, let's think of a strategy. We can use [`includes`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes) to figure out if an array has a certain item in it. Let's do that to see if `letters` has a vowel.
+
+To do this, we'll create an array of vowels inside of `numberOfVowels` that we can check against:
+
+```js
+var letters = ['a', 'b', 'c', 'e', 'i'];
+
+function numberOfVowels(array) {
+  var number = 0;
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  return number;      
+};
+
+numberOfVowels(letters);
+```
+
+We've also initialized `number` to `0` so that we can increment it in a moment.
+
+Next, we want to loop through all of the letters that were passed in through the `array` as an argument:
+
+```js
+var letters = ['a', 'b', 'c', 'e', 'i'];
+
+function numberOfVowels(array) {
+  var number = 0;
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  for (var i = 0; i < vowels.length; i++) {
+    if (array.includes(vowels[i])) {
+      number++;
+    }
+  };
+  
+  return number;      
+};
+
+numberOfVowels(letters);
+```
+
+It works!
+
+However, what if letters looked like this and had a duplicate?
+
+
+```js
+var letters = ['a', 'b', 'c', 'e', 'i'];
+```
+
+Our current solution wouldn't check for that. Why not?
+
+Let's change it to so that it would check for that:
+
+```js
+var letters = ['a', 'b', 'c', 'e', 'i', 'e'];
+
+function numberOfVowels(array) {
+  var number = 0;
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  for (var i = 0; i < vowels.length; i++) {
+    for (var j = 0; j < array.length; j++) {
+      if (vowels[i] === array[j]) {
+        number++;
+      }
+    }
+  };
+  
+  return number;      
+};
+
+numberOfVowels(letters);
+```
+
+So what is this code all about?:
+
+```js
+for (var i = 0; i < vowels.length; i++) {
+  for (var j = 0; j < array.length; j++) {
+    if (vowels[i] === array[j]) {
+      number++;
+    }
+  }
+};
+```
+
+We're essentially checking every item in the `vowels` array against every item in the `letters` (which we called `array` inside the function) array. So step by step, it's saying this:
+
+1. Is `a` (from `vowels`) the same thing as `a` from letters? Yep! Increment `number`!
+2. Is `a` (from `vowels`) the same thing as `b` from letters? Nope. Don't do anything.
+3. Is `a` (from `vowels`) the same thing as `c` from letters? Nope. Don't do anything.
+4. Is `a` (from `vowels`) the same thing as `e` from letters? Nope. Don't do anything.
+5. Is `a` (from `vowels`) the same thing as `i` from letters? Nope. Don't do anything.
+6. Is `a` (from `vowels`) the same thing as `e` from letters? Nope. Don't do anything.
+7. Is `e` (from `vowels`) the same thing as `a` from letters? Nope. Don't do anything.
+8. Is `e` (from `vowels`) the same thing as `b` from letters? Nope. Don't do anything.
+9. Is `e` (from `vowels`) the same thing as `c` from letters? Nope. Don't do anything.
+10. Is `e` (from `vowels`) the same thing as `e` from letters? Yep! Increment `number`!
+11. Is `e` (from `vowels`) the same thing as `i` from letters? Nope. Don't do anything.
+12. Is `e` (from `vowels`) the same thing as `e` from letters? Yep! Increment `number`!
+
+And so on...
+
+## More Exercises:
+
+- Multiply: [https://www.codewars.com/kata/multiply/train/javascript](Multiply: https://www.codewars.com/kata/multiply/train/javascript
+- Return Negative: [https://www.codewars.com/kata/return-negative/train/](https://www.codewars.com/kata/return-negative/train/)
+javascript
+- Is Greater Than: https://codepen.io/hrprep/pen/wdBKee?editors=1010
+- Is Even: https://codepen.io/hrprep/pen/wdBMQO
+- Is Old Enough to Drink: https://codepen.io/hrprep/pen/aWoPaL?
+q=isoldenoughtodrink&limit=mine
+- Check Age: https://codepen.io/hrprep/pen/bWGvgo
+- Get Length of Word: https://codepen.io/hrprep/pen/OmJvxg
+- Get Length of Two Words: https://codepen.io/hrprep/pen/gWOeoW
+- Remove First and Last Character: https://www.codewars.com/kata/remove-firstand-
+last-character/train/javascript)
+- Return Negative: https://www.codewars.com/kata/return-negative/train/
+javascript
+- Is Greater Than: https://codepen.io/hrprep/pen/wdBKee?editors=1010
+- Is Even: https://codepen.io/hrprep/pen/wdBMQO
+- Is Old Enough to Drink: https://codepen.io/hrprep/pen/aWoPaL?
+q=isoldenoughtodrink&limit=mine
+- Check Age: https://codepen.io/hrprep/pen/bWGvgo
+- Get Length of Word: https://codepen.io/hrprep/pen/OmJvxg
+- Get Length of Two Words: https://codepen.io/hrprep/pen/gWOeoW
+- Remove First and Last Character: https://www.codewars.com/kata/remove-firstand-
+last-character/train/javascript
+
 
