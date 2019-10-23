@@ -84,7 +84,7 @@ We can literally assign anything to variables in JavaScript, as we'll see in a b
 var pi = 3.14;
 var circumference = 40;
 
-var radius = (circumference / 2 * pi);
+var radius = circumference / (2 * pi);
 
 console.log(radius);
 ```
@@ -101,7 +101,7 @@ Can you write some code now to find the diameter of the circle? The forumla is `
   var pi = 3.14;
   var circumference = 40;
 
-  var radius = circumference / 2 * pi;
+  var radius = circumference / (2 * pi);
 
   var diameter = radius * 2;
 
