@@ -27,7 +27,7 @@ So go ahead and open [https://repl.it](https://repl.it) in a new browser tab, an
 
 Next, find the blue button at the top that says "+ new repl" and click it:
 
-![img](https://www.projectshift.io/wp-content/uploads/2019/07/Screen-Shot-2019-07-08-at-9.22.39-PM.png)
+![img](https://www.projectshift.info/wp-content/uploads/2019/07/Screen-Shot-2019-07-08-at-9.22.39-PM.png)
 
 In the language drop-down, type in JavaScript, skip the rest and click "Create Repl":
 
