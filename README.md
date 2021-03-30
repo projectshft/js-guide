@@ -25,17 +25,17 @@ JavaScript can be executed in two places. Either in browser (the most common way
 
 So go ahead and open [https://repl.it](https://repl.it) in a new browser tab, and sign up for an account.
 
-Next, find the blue button at the top that says "+ new repl" and click it:
+Next, find the blue button at the top with "+" and click it:
 
-![img](https://www.projectshift.info/wp-content/uploads/2019/07/Screen-Shot-2019-07-08-at-9.22.39-PM.png)
+![img](https://ps-curriculum-images.s3.amazonaws.com/repl-1.png)
 
-In the language drop-down, type in JavaScript, skip the rest and click "Create Repl":
+In the language drop-down, type in 'Node.js', skip the rest and click "Create Repl":
 
-![img](https://www.projectshift.info/wp-content/uploads/2019/07/Screen-Shot-2019-07-08-at-9.23.46-PM.png)
+![img](https://ps-curriculum-images.s3.amazonaws.com/repl-2.png)
 
 Now you will see a screen that looks like this:
 
-![img](https://www.projectshift.info/wp-content/uploads/2019/07/Screen-Shot-2019-07-08-at-9.25.16-PM.png)
+![img](https://ps-curriculum-images.s3.amazonaws.com/repl-3.png)
 
 On the left (inside of `index.js`), we'll write our code and when we press "run", we'll see any output logged in the black. 
 
