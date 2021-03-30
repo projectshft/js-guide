@@ -1,7 +1,7 @@
-# JavaScript Crash Course
+# JavaScript: A Complete Learning Guide
 
 ## Introduction
-The following is based on an in-person event, but has also been written in such a way that anyone could pick it up and code along! 
+The following is based on a live event, but has also been written in such a way that anyone could pick it up and code along! 
 
 As a disclaimer, this is only a brief introduction and overview of JavaScript. Learning JavaScript confidently (as any programming langauge) is only possible through many hours of dedicated work. However, this should be a great starting point!
 
