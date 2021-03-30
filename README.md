@@ -52,7 +52,7 @@ Coding is all about being lazy - instead of doing something ourselves, we want t
 
 For example, I hated math in school and was terrible at it. So I would have liked to be able to code my math problems. Let's imagine we wanted to find the radius of a circle (from the middle to the edge, remember?):
 
-![img](https://www.projectshift.info/wp-content/uploads/2019/07/Screen-Shot-2019-07-08-at-9.33.28-PM.png)
+![img](https://ps-curriculum-images.s3.amazonaws.com/radius.svg)
 
 The formula for this is: `circumference / 2 * pi`
 
